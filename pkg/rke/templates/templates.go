@@ -31,6 +31,7 @@ const (
 	calicov3261          = "calico-v3.26.1"
 	calicov3261Rancher2  = "calico-v3.26.1-rancher2"
 	calicov3270          = "calico-v3.27.0"
+	calicov3270          = "calico-v3.27.0"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
@@ -62,6 +63,7 @@ const (
 	flannelv0140Rancher2 = "flannel-v0.14.0-rancher2"
 	flannelv0192         = "flannel-v0.19.2"
 	flannelv0214         = "flannel-v0.21.4"
+	flannelv0242         = "flannel-v0.24.2"
 
 	coreDnsv18          = "coredns-v1.8"
 	coreDnsv116         = "coredns-v1.16"
@@ -122,8 +124,8 @@ var TemplateIntroducedRanges = map[string][]string{
 func LoadK8sVersionedTemplates() map[string]map[string]string {
 	return map[string]map[string]string{
 		kdm.Calico: {
-			">=1.29.0-rancher1-1":   					calicov3270,
-			">=1.27.8-rancher2-1 <1.29.0-rancher1-1":   calicov3261Rancher2,
+			">=1.28.6-rancher1-1":                      calicov3270,
+			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   calicov3261Rancher2,
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   calicov3261,
 			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  calicov3261Rancher2,
 			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  calicov3250,
@@ -159,8 +161,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":     calicov18,
 		},
 		kdm.Canal: {
-			">=1.29.0-rancher1-1":   					canalv3270,
-			">=1.27.8-rancher2-1 <1.29.0-rancher1-1":   canalv3261Rancher2,
+			">=1.28.6-rancher1-1":                      canalv3270,
+			">=1.27.8-rancher2-1 <1.28.6-rancher1-1":   canalv3261Rancher2,
 			">=1.27.0-rancher1-1 <1.27.8-rancher2-1":   canalv3261,
 			">=1.26.11-rancher2-1 <1.27.0-rancher1-1":  canalv3261Rancher2,
 			">=1.26.0-rancher1-1 <1.26.11-rancher2-1":  canalv3250,
@@ -196,7 +198,8 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.8.0-rancher0 <1.13.0-rancher0":        canalv18,
 		},
 		kdm.Flannel: {
-			">=1.26.0-rancher1-1":                     flannelv0214,
+			">=1.28.6-rancher1-1":                     flannelv0242,
+			">=1.26.0-rancher1-1 <1.28.6-rancher1-1":  flannelv0214,
 			">=1.25.0-rancher1-1 <1.26.0-rancher1-1":  flannelv0192,
 			">=1.24.10-rancher1-1 <1.25.0-rancher1-1": flannelv0140Rancher2,
 			">=1.24.0-rancher1-1 <1.24.10-rancher1-1": flannelv0140,
@@ -345,6 +348,7 @@ func getTemplates() map[string]string {
 		flannelv0140Rancher2: FlannelTemplateV0_14_0Rancher2,
 		flannelv0192:         FlannelTemplateV0_19_2,
 		flannelv0214:         FlannelTemplateV0_21_4,
+		flannelv0242:         FlannelTemplateV0_24_2,
 		flannelv18:           FlannelTemplate,
 
 		canalv113:                     CanalTemplateV113,
