@@ -31,7 +31,6 @@ const (
 	calicov3261          = "calico-v3.26.1"
 	calicov3261Rancher2  = "calico-v3.26.1-rancher2"
 	calicov3270          = "calico-v3.27.0"
-	calicov3270          = "calico-v3.27.0"
 
 	canalv18                      = "canal-v1.8"
 	canalv113                     = "canal-v1.13"
