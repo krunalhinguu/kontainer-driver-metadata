@@ -2211,3 +2211,14 @@ releases:
         repo: rancher-rke2-charts
         version: 3.3.0-rancher100
     featureVersions: *featureVersions-v1
+  - version: v1.31.0+rke2r1
+    minChannelServerVersion: v2.9.0-alpha1
+    maxChannelServerVersion: v2.9.99
+    serverArgs: *serverArgs-v1-28-11-rke2r1
+    agentArgs: *agentArgs-v1-28-11-rke2r1
+    charts: &charts-v1-31-0-rke2r1
+      <<: *charts-v1-30-3-rke2r1
+      harvester-cloud-provider:
+        repo: rancher-rke2-charts
+        version: 0.2.600
+    featureVersions: *featureVersions-v1
