@@ -10,6 +10,12 @@ defaults:
     - application/vnd.oci.image.manifest.v1+json
     - application/vnd.oci.image.index.v1+json
 sync:
+  - source: docker.io/csociety/rke-tools
+    target: '{{ env "REGISTRY_ENDPOINT" }}/csociety/rke-tools'
+    type: repository
+    tags:
+      allow:
+        - latest
   - source: docker.io/rancher/calico-cni
     target: '{{ env "REGISTRY_ENDPOINT" }}/rancher/calico-cni'
     type: repository
@@ -1283,7 +1289,6 @@ sync:
         - v0.1.100
         - v0.1.102
         - v0.1.103
-        - v0.1.105
         - v0.1.80
         - v0.1.87
         - v0.1.88
